@@ -10,6 +10,7 @@ app.use(express.static('images'));
 app.use(express.static('css'));
 app.use(express.static('views'));
 
+//initialise body parser
 let bodyParser = require('body-parser');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
@@ -33,7 +34,7 @@ app.post('/addtask', function (req, res) {
     console.log(req.body.taskname);
     console.log(req.body.taskdue);
     console.log(req.body.taskdesc);
-    res.sendFile(__dirname + '/views/index.html');
+    res.render("listtask", {tasks: db});
 });
 
 //list all GET req
