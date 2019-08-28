@@ -15,11 +15,15 @@ let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: false
 }))
+// parse application/json
 app.use(bodyParser.json())
+
+//index
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+//add task POST req
 app.post('/addtask', function (req, res) {
     db.push({
         taskname: req.body.taskname,
@@ -32,6 +36,7 @@ app.post('/addtask', function (req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+//list all GET req
 app.get('/listall', function(req, res) {
     res.render("listtask", {tasks: db});
     console.log(db);
