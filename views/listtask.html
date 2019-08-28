@@ -1,0 +1,28 @@
+<html>
+<head>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        <a href="index.html">Home</a>
+        <a href="addtask.html">Add New Task</a>
+    </h2>
+    <table id="tb01">
+        <tr>
+            <td>Name</td>
+            <td>Due Date</td>
+            <td>Description</td>
+        </tr>
+        <% for (let i =0; i < tasks.length;i++){ %>
+            <tr>
+                <td><%= tasks[i].taskname %></td>
+                <td><%= tasks[i].taskdue %></td>
+                <td><%= tasks[i].taskdesc %></td>
+            </tr>
+        <% }%>
+</body>
+</html>
