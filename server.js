@@ -7,7 +7,6 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use(express.static('images'));
-app.use(express.static('css'));
 app.use(express.static('views'));
 
 let bodyParser = require('body-parser');
