@@ -8,21 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>List Tasks</h1> </br>
     <h2>
         <a href="index.html">Home</a>
         <a href="addtask.html">Add New Task</a>
     </h2>
     <table id="tb01">
         <tr>
+            <td>ID</td>
             <td>Name</td>
+            <td>Assigned To</td>
             <td>Due Date</td>
+            <td>Task Status</td>
             <td>Description</td>
         </tr>
-        <% for (let i =0; i < tasks.length;i++){ %>
-            <tr>
-                <td><%= tasks[i].taskname %></td>
-                <td><%= tasks[i].taskdue %></td>
-                <td><%= tasks[i].taskdesc %></td>
+        <% for (let i = 0; i < tasks.length;i++){ %>
+            <tr> 
+                <td><%= tasks[i].taskid %></td>
+                <td><%= tasks[i].name %></td>
+                <td><%= tasks[i].assignedto %></td>
+                <td><%= tasks[i].duedate %></td>
+                <td><%= tasks[i].taskstatus %></td>
+                <td><%= tasks[i].description %></td>
             </tr>
         <% }%>
 </body>
